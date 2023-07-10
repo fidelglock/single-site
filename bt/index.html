@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bajaj Triumph</title>
+    <style>
+      html {
+              font-family: Helvetica, Arial, sans-serif;
+              font-weight: 600;
+              font-size: 20pt;
+              text-transform: uppercase;
+              text-align: center;
+              background: linear-gradient(rgba(0,0,0) 0%, rgba(113,121,126) 100%);
+              color: white;
+      }
+      img {
+          max-width: 60%;
+          height: 80vh;
+          border: 2px solid white;
+          border-radius: 25px;
+      }
+    </style>
+  </head>
+  <h1>Bajaj Triumph 400</h1>
+  <script language="javascript">
+    var imgArray = new Array();
+    var bucket =
+      "https://fgh-bike-photos.s3.eu-north-1.amazonaws.com/bikes/bt-400/bt-400/";
+    var ext = ".jpg";
+    for (i = 0; i < 10; i++) {
+      imgArray[i] = bucket + (i + 1) + ext;
+    }
+    console.log(imgArray);
+    function showImage() {
+      var imgNum = Math.round(Math.random() * 9);
+      console.log(imgNum);
+      var objImg = document.getElementById("introImg");
+      objImg.src = imgArray[imgNum];
+    }
+  </script>
+    <body onload="showImage()">
+      <img id="introImg" border="0" />
+    </body>
+</html>
